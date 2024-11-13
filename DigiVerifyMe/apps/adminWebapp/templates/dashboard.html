@@ -1,0 +1,108 @@
+
+<!-- # adminWebapp/templates/dashboard.html -->
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- System Metrics -->
+    <div class="bg-white overflow-hidden shadow rounded-lg">
+        <div class="px-4 py-5 sm:p-6">
+            <dt class="text-sm font-medium text-gray-500 truncate">
+                Total Users
+            </dt>
+            <dd class="mt-1 text-3xl font-semibold text-gray-900">
+                {{ system_metrics.total_users }}
+            </dd>
+        </div>
+    </div>
+
+    <div class="bg-white overflow-hidden shadow rounded-lg">
+        <div class="px-4 py-5 sm:p-6">
+            <dt class="text-sm font-medium text-gray-500 truncate">
+                Active Users (24h)
+            </dt>
+            <dd class="mt-1 text-3xl font-semibold text-gray-900">
+                {{ system_metrics.active_users_24h }}
+            </dd>
+        </div>
+    </div>
+
+    <div class="bg-white overflow-hidden shadow rounded-lg">
+        <div class="px-4 py-5 sm:p-6">
+            <dt class="text-sm font-medium text-gray-500 truncate">
+                Pending Verifications
+            </dt>
+            <dd class="mt-1 text-3xl font-semibold text-gray-900">
+                {{ system_metrics.pending_verifications }}
+            </dd>
+        </div>
+    </div>
+
+    <div class="bg-white overflow-hidden shadow rounded-lg">
+        <div class="px-4 py-5 sm:p-6">
+            <dt class="text-sm font-medium text-gray-500 truncate">
+                System Health
+            </dt>
+            <dd class="mt-1 text-3xl font-semibold {% if system_metrics.system_health == 'healthy' %}text-green-600{% else %}text-red-600{% endif %}">
+                {{ system_metrics.system_health|title }}
+            </dd>
+        </div>
+    </div>
+</div>
+
+<!-- Verification Statistics -->
+<div class="mt-8">
+    <h2 class="text-lg font-medium text-gray-900">Verification Statistics</h2>
+    <div class="mt-4 bg-white shadow overflow-hidden sm:rounded-lg">
+        <div class="px-4 py-5 sm:p-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <span class="text-sm font-medium text-gray-500">Total</span>
+                    <p class="mt-1 text-2xl font-semibold text-gray-900">{{ verification_stats.total }}</p>
+                </div>
+                <div>
+                    <span class="text-sm font-medium text-gray-500">Pending</span>
+                    <p class="mt-1 text-2xl font-semibold text-yellow-600">{{ verification_stats.pending }}</p>
+                </div>
+                <div>
+                    <span class="text-sm font-medium text-gray-500">Approved</span>
+                    <p class="mt-1 text-2xl font-semibold text-green-600">{{ verification_stats.approved }}</p>
+                </div>
+                <div>
+                    <span class="text-sm font-medium text-gray-500">Rejected</span>
+                    <p class="mt-1 text-2xl font-semibold text-red-600">{{ verification_stats.rejected }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- User Statistics -->
+<div class="mt-8">
+    <h2 class="text-lg font-medium text-gray-900">User Statistics</h2>
+    <div class="mt-4 bg-white shadow overflow-hidden sm:rounded-lg">
+        <div class="px-4 py-5 sm:p-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <span class="text-sm font-medium text-gray-500">Total Users</span>
+                    <p class="mt-1 text-2xl font-semibold text-gray-900">{{ user_stats.total_users }}</p>
+                </div>
+                <div>
+                    <span class="text-sm font-medium text-gray-500">Active Users</span>
+                    <p class="mt-1 text-2xl font-semibold text-blue-600">{{ user_stats.active_users }}</p>
+                </div>
+                <div>
+                    <span class="text-sm font-medium text-gray-500">New Users (30d)</span>
+                    <p class="mt-1 text-2xl font-semibold text-green-600">{{ user_stats.new_users_30d }}</p>
+                </div>
+                <div>
+                    <span class="text-sm font-medium text-gray-500">Verified Users</span>
+                    <p class="mt-1 text-2xl font-semibold text-purple-600">{{ user_stats.verified_users }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

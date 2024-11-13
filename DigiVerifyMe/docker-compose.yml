@@ -1,0 +1,32 @@
+# DIDBlockchain\docker-compose.yml
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8001
+    volumes:
+      - .:/app
+      - ./staticfiles:/app/staticfiles  # Added volume for static files
+    ports:
+      - "8001:8001"
+    environment:
+      - DEBUG=1  # Set to 0 in production
+      - RUNNING_IN_DOCKER=True
+      - DB_NAME=digiVerifyMe_db
+      - DB_USER=thriftstore_user
+      - DB_PASSWORD=Douvretenser30
+      - DB_HOST=db
+      - DB_PORT=5432
+
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=digiVerifyMe_db
+      - POSTGRES_USER=thriftstore_user
+      - POSTGRES_PASSWORD=Douvretenser30
+
+volumes:
+  postgres_data:
