@@ -1,11 +1,10 @@
-### README.md
 
-```markdown
+
 # DigiVerifyMe - Decentralized Identity Verification Platform
 
 DigiVerifyMe is a comprehensive and modular identity verification platform leveraging blockchain technology, zero-knowledge proofs (ZKP), and decentralized key management. It integrates various services like authentication, KYC, and credential wallets to ensure a secure and seamless user experience.
 
----
+
 
 ## Features
 
@@ -175,9 +174,11 @@ This project is licensed under the **MIT License**.
 
 ---
 
-## Contact
+## 👤 Author
 
-For questions or support, reach out to **[your-email@example.com](mailto:your-email@example.com)**.
-
+Ndaedzo Austin Mukhuba
+- GitHub: [@ndaedzo](https://github.com/ndaedxo)
+- LinkedIn: [Ndaedzo Austin Mukhuba](https://linkedin.com/in/ndaedzo-mukhuba-71759033b)
+- Email: [ndaemukhuba](ndaemukhuba@gmail.com)
 Happy Building!
 ```
