@@ -62,7 +62,7 @@ DigiVerifyMe/
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-repo/digiverifyme.git
+   git clone https://github.com/ndaedxo/Decentralized-Identification-System.git
    cd digiverifyme
    ```
 
